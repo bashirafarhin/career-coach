@@ -24,7 +24,6 @@ export async function updateUser(data) {
           },
         });
 
-        // If industry doesn't exist, create it with default values - will replace with ai later
         if (!industryInsight) {
           const insights = await generateAIInsights(data.industry);
               const industryInsight = await db.industryInsight.create({
@@ -80,10 +79,7 @@ export async function getUserOnboardingStatus() {
         industry: true,
       },
     });
-
-    return {
-      isOnboarded: !!user?.industry,
-    };
+    return user.industry ? true : false;
   } catch (error) {
     console.error("Error checking onboarding status:", error);
     throw new Error("Failed to check onboarding status");
