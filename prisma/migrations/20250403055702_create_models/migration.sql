@@ -21,7 +21,6 @@ CREATE TABLE "Assessment" (
     "userId" TEXT NOT NULL,
     "quizScore" DOUBLE PRECISION NOT NULL,
     "questions" JSONB[],
-    "category" TEXT NOT NULL,
     "improvementTip" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,

@@ -14,9 +14,8 @@ const About = () => {
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const scrollThreshold = 100;
 
-      if (scrollPosition > scrollThreshold) {
+      if (scrollPosition > 100) {
         imageElement.classList.add("scrolled");
       } else {
         imageElement.classList.remove("scrolled");

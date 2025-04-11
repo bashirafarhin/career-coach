@@ -13,7 +13,6 @@ export async function updateUser(data) {
   });
 
   if (!user) throw new Error("User not found");
-
   try {
     const result = await db.$transaction(
       async (txn) => {
@@ -54,8 +53,7 @@ export async function updateUser(data) {
     );
     return { success: true, ...result };
   } catch (error) {
-    console.log(error);
-    // console.error("Error updating user and industry:", error.message);
+    console.error("Error updating user and industry:", error.message);
     throw new Error("Failed to update profile" + error.message);
   }
 }
