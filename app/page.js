@@ -22,8 +22,6 @@ import { testimonial } from "@/data/testimonial";
 import { faqs } from "@/data/faqs";
 import { howItWorks } from "@/data/howItWorks";
 
-// ye as a children layout file ko paas hota hai
-// ye page file hai jo har page ke liye alag hai
 const Home = () => {
   return (
     <>

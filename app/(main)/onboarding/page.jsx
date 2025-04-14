@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import OnboardingForm from "./_components/onboarding_form";
 
 const OnboardingPage = async () => {
-  const { isOnboarded } = await getUserOnboardingStatus();
+  const isOnboarded = await getUserOnboardingStatus();
   if (isOnboarded) {
     redirect("/dashboard");
   }

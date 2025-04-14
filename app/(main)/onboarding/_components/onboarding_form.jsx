@@ -39,7 +39,7 @@ const OnboardingForm = ({ industries }) => {
     fn: updateUserFn,
     data: updateResult,
   } = useFetch(updateUser);
-
+ 
   const onSubmit = async (values) => {
     try {
       const formattedIndustry = `${values.industry}-${values.subIndustry
@@ -56,6 +56,7 @@ const OnboardingForm = ({ industries }) => {
 
   useEffect(() => {
     if (updateResult?.success && !updateLoading) {
+      toast.success("Profile updated successfully!");
       toast.success("Profile completed successfully!");
       router.push("/dashboard");
       router.refresh();

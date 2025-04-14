@@ -13,8 +13,6 @@ export const metadata = {
 
 const inter = Inter({ subsets: ["latin"] });
 
-// ye page show hota hai jab hum localhost:3000 pe jaate hain
-// ye layout page hai jo har page ke liye common hai
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
