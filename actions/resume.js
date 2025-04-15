@@ -66,8 +66,6 @@ export async function improveWithAI({ current, type }) {
         industryInsight: true,
       },
     });
-
-    // what is the response, what is this include doing?
   
     if (!user) throw new Error("User not found");
   

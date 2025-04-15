@@ -1,14 +1,14 @@
-import { z } from "zod"
+import { z } from "zod";
 
 export const OnboardingSchema = z.object({
-    industry : z.string({
-        required_error : "Please select an industry",
-    }),
-    subIndustry : z.string({
-        required_error : "Please select a subIndustry",
-    }),
-    bio: z.string().max(500).optional(),
-    experience: z
+  industry: z.string({
+    required_error: "Please select an industry",
+  }),
+  subIndustry: z.string({
+    required_error: "Please select a subIndustry",
+  }),
+  bio: z.string().max(500).optional(),
+  experience: z
     .string()
     .transform((val) => parseInt(val, 10))
     .pipe(
@@ -25,7 +25,7 @@ export const OnboardingSchema = z.object({
           .filter(Boolean)
       : undefined
   ),
-})
+});
 
 export const contactSchema = z.object({
   email: z.string().email("Invalid email address"),

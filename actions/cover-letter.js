@@ -39,14 +39,12 @@ export async function generateCoverLetter(data) {
     5. Use proper business letter formatting in markdown
     6. Include specific examples of achievements
     7. Relate candidate's background to job requirements
-    
     Format the letter in markdown.
   `;
 
   try {
     const result = await model.generateContent(prompt);
     const content = result.response.text().trim();
-
     const coverLetter = await db.coverLetter.create({
       data: {
         content,

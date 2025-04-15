@@ -71,7 +71,6 @@ export default function ResumeBuilder({ initialContent }) {
     }
   }, [formValues, activeTab]);
 
-  // Handle save result
   useEffect(() => {
     if (saveResult && !isSaving) {
       toast.success("Resume saved successfully!");
@@ -123,7 +122,6 @@ export default function ResumeBuilder({ initialContent }) {
         html2canvas: { scale: 2 },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
       };
-
       await html2pdf().set(opt).from(element).save();
     } catch (error) {
       console.error("PDF generation error:", error);
@@ -133,11 +131,13 @@ export default function ResumeBuilder({ initialContent }) {
   };
 
   const onSubmit = async (data) => {
+    console.log("preview content",previewContent)
     try {
       const formattedContent = previewContent
         .replace(/\n/g, "\n") // Normalize newlines
         .replace(/\n\s*\n/g, "\n\n") // Normalize multiple newlines to double newlines
         .trim();
+      console.log("Formatted Content:", formattedContent);
       await saveResumeFn(previewContent);
     } catch (error) {
       console.error("Save error:", error);
@@ -145,7 +145,7 @@ export default function ResumeBuilder({ initialContent }) {
   };
 
   return (
-    <div data-color-mode="light" className="space-y-4">
+    <div data-color-mode="dark" className="m-8 space-y-4">
       <div className="flex flex-col md:flex-row justify-between items-center gap-2">
         <h1 className="font-bold gradient-title text-5xl md:text-6xl">
           Resume Builder
