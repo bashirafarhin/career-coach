@@ -27,9 +27,7 @@ export async function generateQuiz() {
     } professional${
     user.skills?.length ? ` with expertise in ${user.skills.join(", ")}` : ""
   }.
-    
     Each question should be multiple choice with 4 options.
-    
     Return the response in this JSON format only, no additional text:
     {
       "questions": [
@@ -42,14 +40,12 @@ export async function generateQuiz() {
       ]
     }
   `;
-
   try {
     const result = await model.generateContent(prompt);
     const response = result.response;
     const text = response.text();
     const cleanedText = text.replace(/```(?:json)?\n?/g, "").trim();
     const quiz = JSON.parse(cleanedText);
-
     return quiz.questions;
   } catch (error) {
     console.error("Error generating quiz:", error);
@@ -106,7 +102,6 @@ export async function saveQuizResult(questions, answers, score) {
       console.error("Error generating improvement tip:", error);
     }
   }
-
   try {
     const assessment = await db.assessment.create({
       data: {
@@ -117,7 +112,6 @@ export async function saveQuizResult(questions, answers, score) {
         improvementTip,
       },
     });
-
     return assessment;
   } catch (error) {
     console.error("Error saving quiz result:", error);

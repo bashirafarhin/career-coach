@@ -83,7 +83,6 @@ export default function QuizList({ assessments }) {
           </DialogHeader>
           <QuizResult
             result={selectedQuiz}
-            hideStartNew
             onStartNew={() => router.push("/interview/mock")}
           />
         </DialogContent>

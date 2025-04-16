@@ -84,7 +84,6 @@ export async function improveWithAI({ current, type }) {
       
       Format the response as a single paragraph without any additional text or explanations.
     `;
-  
     try {
       const result = await model.generateContent(prompt);
       const response = result.response;
@@ -94,5 +93,5 @@ export async function improveWithAI({ current, type }) {
       console.error("Error improving content:", error);
       throw new Error("Failed to improve content");
     }
-  }
+}
   

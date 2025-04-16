@@ -1,4 +1,5 @@
 "use server";
+
 import { auth } from "@clerk/nextjs/server";
 import { db } from "@/lib/prisma";
 import { generateAIInsights } from "./dashboard";
@@ -16,16 +17,14 @@ export async function updateUser(data) {
   try {
     const result = await db.$transaction(
       async (txn) => {
-        // find if the industry exists
         let industryInsight = await txn.industryInsight.findUnique({
           where: {
             industry: data.industry,
           },
         });
-
         if (!industryInsight) {
           const insights = await generateAIInsights(data.industry);
-              const industryInsight = await db.industryInsight.create({
+              const industryInsight = await txn.industryInsight.create({
                 data: {
                   industry: data.industry,
                   ...insights,
@@ -34,8 +33,6 @@ export async function updateUser(data) {
               });
               return industryInsight
         }
-
-        // update the user
         const updatedUser = await txn.user.update({
           where: {
             id: user.id,
