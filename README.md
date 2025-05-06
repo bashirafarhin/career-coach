@@ -1,5 +1,10 @@
 # AI Career Coach
 
+## How it works
+Here is a quick video that shows how the app works:
+
+https://www.loom.com/share/4838bed3e252450ebf0f6955786a4bad?sid=49e49425-d4f3-4f24-bc04-58889cefda94
+
 ## Overview
 
 AI Career Coach is a platform designed to help individuals advance their careers through personalized guidance, interview preparation, and AI-powered tools. The platform offers features such as an intelligent resume builder, a cover letter generator, and an adaptive interview preparation system, all tailored to specific industries and skills.
@@ -15,16 +20,15 @@ AI Career Coach is a platform designed to help individuals advance their careers
 
 ## Technologies Used
 
--   **Next.js:** A React framework for building web applications. ([next.config.mjs](next.config.mjs))
+-   **Next.js:** A React framework for building web applications.
 -   **React:** A JavaScript library for building user interfaces.
--   **Tailwind CSS:** A utility-first CSS framework for styling the application. ([tailwind.config.mjs](tailwind.config.mjs), [app/globals.css](app/globals.css))
--   **Prisma:** A modern database toolkit and ORM. ([prisma/migrations/20250403055702_create_models/migration.sql](prisma/migrations/20250403055702_create_models/migration.sql), [lib/prisma.js](lib/prisma.js))
--   **Clerk:** Authentication and user management. ([middleware.js](middleware.js), [app/(auth)/sign-up/[[...sign-up]]/page.jsx](app/(auth)/sign-up/[[...sign-up]]/page.jsx))
--   **Google Gemini API:** Used for AI-powered content generation and industry insights. ([actions/dashboard.js](actions/dashboard.js), [actions/resume.js](actions/resume.js), [actions/cover-letter.js](actions/cover-letter.js), [actions/interview.js](actions/interview.js))
--   **Zod:** For schema validation. ([app/lib/schema.js](app/lib/schema.js))
+-   **Tailwind CSS:** A utility-first CSS framework for styling the application.
+-   **Prisma:** A modern database toolkit and ORM.
+-   **Clerk:** Authentication and user management.
+-   **Google Gemini API:** Used for AI-powered content generation and industry insights.
+-   **Zod:** For schema validation.
 -   **React Hook Form:** For form management.
 -   **Sonner:** For toast notifications.
 -   **Lucide React:** For icons.
--   **UIW React Markdown Editor:** For Markdown editing and preview. ([app/(main)/ai-cover-letter/_components/cover-letter-preview.jsx](app/(main)/ai-cover-letter/_components/cover-letter-preview.jsx), [app/(main)/resume/_components/resume-builder.jsx](app/(main)/resume/_components/resume-builder.jsx))
--   **HTML2PDF:** For generating PDF documents. ([app/(main)/resume/_components/resume-builder.jsx](app/(main)/resume/_components/resume-builder.jsx))
--   **Inngest:** Background job processing. ([lib/inngest/client.js](lib/inngest/client.js), [lib/inngest/functions.js](lib/inngest/functions.js))
+-   **UIW React Markdown Editor:** For Markdown editing and preview.
+-   **Inngest:** Background job processing.
