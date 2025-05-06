@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const OnboardingSchema = z.object({
   industry: z.string({
-    required_error: "Please select an industry",
+    required_error: "Please select an industry", //custom error message
   }),
   subIndustry: z.string({
     required_error: "Please select a subIndustry",
@@ -10,7 +10,7 @@ export const OnboardingSchema = z.object({
   bio: z.string().max(500).optional(),
   experience: z
     .string()
-    .transform((val) => parseInt(val, 10))
+    .transform((val) => parseInt(val, 10)) //converting it into number as form input always return strings
     .pipe(
       z
         .number()
@@ -26,6 +26,12 @@ export const OnboardingSchema = z.object({
       : undefined
   ),
 });
+
+// Since I have accepted a comma-separated string like "React, Node.js, Tailwind".
+// I have splitted it into an array: ["React", "Node.js", "Tailwind"].
+// .trim() removes extra spaces.
+// .filter(Boolean) removes any empty entries like "" if the user had extra commas.
+// If the string was empty, you return undefined.
 
 export const contactSchema = z.object({
   email: z.string().email("Invalid email address"),
