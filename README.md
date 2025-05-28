@@ -3,7 +3,7 @@
 ## How it works
 Here is a quick video that shows how the app works:
 
-https://www.loom.com/share/4838bed3e252450ebf0f6955786a4bad?sid=49e49425-d4f3-4f24-bc04-58889cefda94
+https://www.loom.com/share/07e5d5e41fde4eb68e0cfe88e2c6a2ae?sid=309f8698-6019-46dc-9c45-edabe1400e2a
 
 ## Overview
 
